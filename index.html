@@ -3,12 +3,19 @@
 <body>
 	<h2>Threat Model My App</h2>
 	<p>Which of the following are present in the new release of your web application?</p>
-	<form>
+	<form id="form">
 		<input type="checkbox" value="authentication">
   		<label for="authentication"> User authentication</label><br>
   		<input type="checkbox" value="input">
   		<label for="authentication"> User input</label><br>
+  		<input type="checkbox" value="xml">
+  		<label for="authentication"> XML processor</label><br>
   		<br>
 		<input type="submit" value="Submit">
 	</form>
+	<script>
+		document.getElementById("form").onsubmit = function() {renderThreatModel()};
+		function renderThreatModel() {
+		}
+	</script>
 </body>
