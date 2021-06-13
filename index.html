@@ -3,7 +3,7 @@
 <body>
 	<h2>Threat Model My App</h2>
 	<p>Which of the following are present in the new release of your web application?</p>
-	<form id="form">
+	<form id="form" action="#">
 		<input type="checkbox" value="authentication">
   		<label for="authentication"> User authentication</label><br>
   		<input type="checkbox" value="input">
@@ -13,9 +13,13 @@
   		<br>
 		<input type="submit" value="Submit">
 	</form>
+	<div id="results">
+	</div>
 	<script>
 		document.getElementById("form").onsubmit = function() {renderThreatModel()};
 		function renderThreatModel() {
+			var resultsText = "Man-in-the-middle attack (TLS 1.2, HSTS Header, disable weak ciphers\nSecurity misconfiguration (Content Security Policy, X-Frame-Options, X-Content-Type-Options, HSTS)\nDenial of service (WAF)\nSensitive data exposure\nUse of hard-coded password\nVulnerable open-source libraries\nBroken cryptographic algorithm\nError handling\nCookie without secure attribute\n";
+			document.getElementById("results").innerText = resultsText;
 		}
 	</script>
 </body>
